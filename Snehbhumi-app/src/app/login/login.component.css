@@ -1,0 +1,51 @@
+.container {
+  text-align: center;
+  margin: auto;
+  border: 1px solid #fff;
+  background-color: #314d80;
+  width: 200px;
+  height: 150px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 5%;
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  /* overflow: auto; */
+}
+
+/* label {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 2%;
+  margin: 2%;
+} */
+
+.appName{
+
+}
+
+#title {
+  font-size: 20px;
+  color: white;
+}
+
+input {
+  min-height: 15px;
+  height: 25px;
+  padding: 4%;
+  margin: 2%;
+  width: 190px;
+  border: none;
+}
+
+#loginBtn {
+  background-color: green;
+  height: 31px;
+  padding: 0%;
+  margin: 2%;
+  width: 204px;
+  border: none;
+  color: #fff;
+}
