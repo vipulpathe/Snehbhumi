@@ -1,16 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-
-const routes: Routes = [{ path: '', component: LoginComponent }, { path: 'home', component: HomeComponent }];
+import { UserComponent } from './user/user.component';
+import { SignUpComponent } from './user/sign-up/sign-up.component';
+import { appRoutes } from './routes';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent],
-  imports: [BrowserModule, RouterModule.forRoot(routes, { useHash: true })],
+  declarations: [AppComponent, LoginComponent, UserComponent, SignUpComponent],
+  imports: [BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent]
 })
