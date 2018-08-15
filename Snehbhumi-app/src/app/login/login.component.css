@@ -22,10 +22,6 @@
   margin: 2%;
 } */
 
-.appName{
-
-}
-
 #title {
   font-size: 20px;
   color: white;
@@ -33,19 +29,45 @@
 
 input {
   min-height: 15px;
-  height: 25px;
+  height: 20px;
   padding: 4%;
-  margin: 2%;
-  width: 190px;
+  margin: 1%;
+  width: 72%;
   border: none;
 }
 
-#loginBtn {
+/* Styling for icons*/
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: green;
+  color: white;
+  min-width: 5%;
+  text-align: center;
+  height: 14px;
+  margin: 1%;
+  padding-top: 6%;
+}
+
+/* Set a style for the submit button */
+.btn {
   background-color: green;
-  height: 31px;
-  padding: 0%;
-  margin: 2%;
-  width: 204px;
+  color: white;
+  /* padding: 0%; */
   border: none;
-  color: #fff;
+  cursor: pointer;
+  width: 98%;
+  opacity: 0.8;
+  height: 24%;
+}
+
+.btn:hover {
+  opacity: 1;
 }
