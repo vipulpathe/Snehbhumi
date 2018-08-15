@@ -1,10 +1,11 @@
 require('./config/config');
 require('./models/db');
+require('./config/passport-config');
 
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
+const passport = require('passport');
 const routesIndex = require('./routes/index.router');
 
 var app = express();
@@ -12,6 +13,7 @@ var app = express();
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
+app.use(passport.initialize());
 app.use('/api', routesIndex);
 
 //error handler
