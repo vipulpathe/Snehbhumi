@@ -35,7 +35,7 @@ module.exports.authenticate = (req, res, next) => {
     })(req, res);
 };
 
-module.exports.userProfile = (req, res, next) => {
+module.exports.userprofile = (req, res, next) => {
     User.findOne({ _id: req._id }, (err, user) => {
         if (!user) {
             return res.status(404).json({ status: false, message: 'User not available.' });

@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-color: #242f80;
+  background-color: #939ff1;
   top: 0;
   left: 0;
   right: 0;
@@ -38,7 +38,6 @@ body {
 
 input {
   min-height: 15px;
-  height: 20px;
   padding: 4%;
   margin: 1%;
   width: 72%;
@@ -79,4 +78,9 @@ input {
 
 .btn:hover {
   opacity: 1;
+}
+
+.active {
+  font-weight: bold;
+  color: red !important;
 }

@@ -1,0 +1,22 @@
+a {
+  color: white;
+  margin: 5px 5px;
+  text-decoration: none;
+}
+
+.header {
+  height: 20px;
+  background-color: blue;
+  opacity: 1;
+  top: 0;
+}
+
+#signIn {
+  top: 5px;
+  right: 20px;
+}
+
+#signUp {
+  top: 5px;
+  right: 10px;
+}

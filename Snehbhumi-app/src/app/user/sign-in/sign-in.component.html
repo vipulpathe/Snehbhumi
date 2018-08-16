@@ -1,0 +1,12 @@
+<form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)" autocomplete="off">
+  <div class="container">
+    <input type="text" name="email" #email="ngModel" [(ngModel)]="model.email" placeholder="Enter email id" required [pattern]="emailRegex"
+    />
+
+    <input type="password" name="password" #password="ngModel" [(ngModel)]="model.password" placeholder="Enter password" required
+      minLength="6" />
+
+    <input type="submit" name="signIn" value="Sign In" />
+  </div>
+</form>
+<div class="error" *ngIf="serverErrorMessages">{{serverErrorMessages}}</div>
