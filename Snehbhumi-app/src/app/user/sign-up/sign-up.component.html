@@ -1,16 +1,29 @@
 <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)" autocomplete="off">
   <div class="container">
-    <input type="text" #fullName="ngModel" [(ngModel)]="userService.selectedUser.fullName" name="fullName" placeholder="Enter full name"
-      required [ngClass]="{'invalid-textbox': signUpForm.submitted && !fullName.valid}" />
-    <div *ngIf="signUpForm.submitted && !fullName.valid">
-      <label class="validation-message">This field is required</label>
+    <div class="input-container">
+      <div class="icon" style="text-align:center">
+        <fa-icon [icon]="faCoffee"></fa-icon>
+      </div>
+      <input type="text" #fullName="ngModel" [(ngModel)]="userService.selectedUser.fullName" name="fullName" placeholder="Enter full name"
+        required [ngClass]="{'invalid-textbox': signUpForm.submitted && !fullName.valid}" />
+      <div *ngIf="signUpForm.submitted && !fullName.valid">
+        <label class="validation-message">This field is required</label>
+      </div>
     </div>
-    <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Enter email" required
-      [pattern]="emailRegex" />
-
-    <input type="password" #fullName="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Enter password"
-      required minLength="6" />
-
+    <div class="input-container">
+      <div class="icon" style="text-align:center">
+        <fa-icon [icon]="faCoffee"></fa-icon>
+      </div>
+      <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Enter email" required
+        [pattern]="emailRegex" />
+    </div>
+    <div class="input-container">
+      <div class="icon" style="text-align:center">
+        <fa-icon [icon]="faCoffee"></fa-icon>
+      </div>
+      <input type="password" #fullName="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Enter password"
+        required minLength="6" />
+    </div>
     <input type="submit" name="signUp" value="Sign Up" />
   </div>
 </form>

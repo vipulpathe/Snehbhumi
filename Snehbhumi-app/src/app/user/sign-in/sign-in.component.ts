@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import {MatIconRegistry} from '@angular/material';
 import { UserService } from '../../shared/user.service';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @Component({
   selector: 'app-sign-in',

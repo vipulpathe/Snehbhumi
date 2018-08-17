@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
@@ -15,9 +16,10 @@ import { UserService } from 'src/app/shared/user.service';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 
+
 @NgModule({
   declarations: [AppComponent, LoginComponent, UserComponent, SignUpComponent, UserProfileComponent, SignInComponent],
-  imports: [BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, FormsModule, HttpClientModule, AngularFontAwesomeModule, FontAwesomeModule, RouterModule.forRoot(appRoutes)],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, AuthGuard, UserService],
   bootstrap: [AppComponent]
 })

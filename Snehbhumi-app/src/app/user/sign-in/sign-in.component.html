@@ -1,11 +1,20 @@
 <form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)" autocomplete="off">
   <div class="container">
-    <input type="text" name="email" #email="ngModel" [(ngModel)]="model.email" placeholder="Enter email id" required [pattern]="emailRegex"
-    />
+    <div class="input-container">
+      <div class="icon" style="text-align:center">
+        <fa-icon [icon]="faCoffee"></fa-icon>
+      </div>
+      <input type="text" name="email" #email="ngModel" [(ngModel)]="model.email" placeholder="Enter email id" required [pattern]="emailRegex"
+      />
+    </div>
 
-    <input type="password" name="password" #password="ngModel" [(ngModel)]="model.password" placeholder="Enter password" required
-      minLength="6" />
-
+    <div class="input-container">
+      <div class="icon" style="text-align:center">
+        <fa-icon [icon]="faCoffee"></fa-icon>
+      </div>
+      <input type="password" name="password" #password="ngModel" [(ngModel)]="model.password" placeholder="Enter password" required
+        minLength="6" />
+    </div>
     <input type="submit" name="signIn" value="Sign In" />
   </div>
 </form>
