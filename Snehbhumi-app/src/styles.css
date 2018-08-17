@@ -32,7 +32,9 @@ h2 {
 
 
 /* STRUCTURE */
-
+.header {
+  height: 32px !important;
+}
 .wrapper {
   display: flex;
   align-items: center;
