@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { UserComponent } from 'src/app/user/user.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserProfileComponent } from './landing-page/user-profile/user-profile.component';
 import { AuthGuard } from './auth/auth.guard';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AddAdminComponent } from './landing-page/add-admin/add-admin.component';
@@ -42,12 +42,16 @@ export const appRoutes: Routes = [
     ]
   },
   {
-    path: 'userprofile',
+    path: 'dashboard',
     component: LandingPageComponent,
     canActivate: [AuthGuard],
     children: [
       {
         path: '',
+        component: DashboardComponent
+      },
+      {
+        path: 'dashboard',
         component: DashboardComponent
       },
       {
@@ -59,7 +63,7 @@ export const appRoutes: Routes = [
         component: AddCustomerComponent
       },
       {
-        path: 'editprofile',
+        path: 'userprofile',
         component: UserProfileComponent
       }
     ]

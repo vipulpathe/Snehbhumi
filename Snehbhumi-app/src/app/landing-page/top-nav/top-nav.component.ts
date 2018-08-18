@@ -20,19 +20,19 @@ export class TopNavComponent implements OnInit {
   ngOnInit() {}
 
   onDashboard(): void {
-    this._router.navigateByUrl('/userprofile');
+    this._router.navigateByUrl('/dashboard');
   }
 
   public onAddAdmin(): void {
-    this._router.navigateByUrl('/userprofile/addadmin');
+    this._router.navigateByUrl('/dashboard/addadmin');
   }
 
   public onAddCustomer(): void {
-    this._router.navigateByUrl('/userprofile/addcustomer');
+    this._router.navigateByUrl('/dashboard/addcustomer');
   }
 
   public onUserProfile(): void {
-    this._router.navigateByUrl('/userprofile');
+    this._router.navigateByUrl('/dashboard/userprofile');
   }
 
   public onLogout(): void {
