@@ -1,19 +1,21 @@
 <nav class="navbar navbar-expand-sm bg-light">
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" routerLink="/dashboard" routerLinkActive="active" (click)="onDashboard()">Dashboard</a>
+      <a class="nav-link" routerLink="/landingpage" routerLinkActive="active">Dashboard</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/addadmin" routerLinkActive="active" (click)="onAddAdmin()">Add admin</a>
+      <a class="nav-link" routerLink="/landingpage/addadmin" routerLinkActive="active">Add admin</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/addcustomer" routerLinkActive="active" (click)="onAddCustomer()">Add customer</a>
+      <a class="nav-link" routerLink="/landingpage/addcustomer" routerLinkActive="active">Add customer</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/userprofile" routerLinkActive="active" (click)="onUserProfile()">Edit user profile</a>
+      <a class="nav-link" routerLink="/landingpage/userprofile" routerLinkActive="active">Edit user profile
+      </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" routerLink="/login" (click)="onLogout()">Logout</a>
     </li>
   </ul>
+  <span id="greeting">Welcome {{userDetails?.fullName}}</span>
 </nav>

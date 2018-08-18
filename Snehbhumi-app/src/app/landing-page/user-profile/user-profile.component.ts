@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { UserService } from '../../shared/user.service';
 
@@ -11,11 +10,9 @@ import { UserService } from '../../shared/user.service';
 export class UserProfileComponent implements OnInit {
   public userDetails: any;
   private _userService: UserService;
-  private _router: Router;
 
-  constructor(userService: UserService, router: Router) {
+  constructor(userService: UserService) {
     this._userService = userService;
-    this._router = router;
   }
 
   ngOnInit() {

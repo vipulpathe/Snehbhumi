@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { UserService } from '../../shared/user.service';
+import { User } from '../../shared/user.model';
 
 @Component({
   selector: 'app-top-nav',
@@ -9,6 +10,7 @@ import { UserService } from '../../shared/user.service';
   styleUrls: ['./top-nav.component.css']
 })
 export class TopNavComponent implements OnInit {
+  public userDetails: User;
   private _userService: UserService;
   private _router: Router;
 
@@ -17,22 +19,13 @@ export class TopNavComponent implements OnInit {
     this._router = router;
   }
 
-  ngOnInit() {}
-
-  onDashboard(): void {
-    this._router.navigateByUrl('/dashboard');
-  }
-
-  public onAddAdmin(): void {
-    this._router.navigateByUrl('/dashboard/addadmin');
-  }
-
-  public onAddCustomer(): void {
-    this._router.navigateByUrl('/dashboard/addcustomer');
-  }
-
-  public onUserProfile(): void {
-    this._router.navigateByUrl('/dashboard/userprofile');
+  ngOnInit() {
+    this._userService.getUserProfile().subscribe(
+      res => {
+        this.userDetails = res['user'];
+      },
+      err => {}
+    );
   }
 
   public onLogout(): void {

@@ -16,13 +16,19 @@
       </div>
       <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Enter email" required
         [pattern]="emailRegex" />
+      <div *ngIf="addAdminForm.submitted && !email.valid">
+        <label class="validation-message">This field is required</label>
+      </div>
     </div>
     <div class="input-container">
       <div class="icon" style="text-align:center">
         <fa-icon [icon]="faCoffee"></fa-icon>
       </div>
-      <input type="password" #fullName="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Enter password"
+      <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Enter password"
         required minLength="6" />
+      <div *ngIf="addAdminForm.submitted && !password.valid">
+        <label class="validation-message">This field is required</label>
+      </div>
     </div>
     <input type="submit" name="signUp" value="Add admin" />
   </div>

@@ -16,3 +16,14 @@ a {
   color: red;
   text-decoration: none;
 }
+
+ul {
+  display: inline-block;
+}
+
+#greeting {
+  right: 5%;
+  margin-left: auto;
+  position: absolute;
+  top: 26px;
+}

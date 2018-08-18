@@ -32,17 +32,7 @@ export const appRoutes: Routes = [
     ]
   },
   {
-    path: '',
-    component: UserComponent,
-    children: [
-      {
-        path: '',
-        component: SignInComponent
-      }
-    ]
-  },
-  {
-    path: 'dashboard',
+    path: 'landingpage',
     component: LandingPageComponent,
     canActivate: [AuthGuard],
     children: [
