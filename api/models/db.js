@@ -12,3 +12,4 @@ mongoose.connect(
 );
 
 require('./user.model');
+require('./customer.model');
