@@ -1,0 +1,10 @@
+User
+    --Sign Up
+    --Sign In
+landing-page
+    --menu-bar
+    --user-profile
+    --add customer
+    --dashboard
+        --reports if required
+    
