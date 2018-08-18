@@ -1,0 +1,18 @@
+nav {
+  background-color: blue;
+}
+
+nav > ul > li {
+  display: inline;
+  margin: auto;
+  padding: 5px;
+}
+
+a {
+  color: white;
+}
+
+.active {
+  color: red;
+  text-decoration: none;
+}

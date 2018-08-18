@@ -3,8 +3,9 @@ User
     --Sign In
 landing-page
     --menu-bar
-    --user-profile
-    --add customer
-    --dashboard
+    -- Add Admin
+    -- User profile
+    -- Add Customer
+    -- Dashoard
         --reports if required
     

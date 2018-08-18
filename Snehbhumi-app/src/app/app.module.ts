@@ -14,9 +14,14 @@ import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserService } from 'src/app/shared/user.service';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { TopNavComponent } from './landing-page/top-nav/top-nav.component';
+import { AddCustomerComponent } from './landing-page/add-customer/add-customer.component';
+import { AddAdminComponent } from './landing-page/add-admin/add-admin.component';
+import { DashboardComponent } from './landing-page/dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, UserComponent, SignUpComponent, UserProfileComponent, SignInComponent],
+  declarations: [AppComponent, UserComponent, SignUpComponent, UserProfileComponent, SignInComponent, LandingPageComponent, TopNavComponent, AddCustomerComponent, AddAdminComponent, DashboardComponent],
   imports: [
     BrowserModule,
     FormsModule,

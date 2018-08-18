@@ -5,6 +5,10 @@ import { UserComponent } from 'src/app/user/user.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthGuard } from './auth/auth.guard';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { AddAdminComponent } from './landing-page/add-admin/add-admin.component';
+import { AddCustomerComponent } from './landing-page/add-customer/add-customer.component';
+import { DashboardComponent } from './landing-page/dashboard/dashboard.component';
 
 export const appRoutes: Routes = [
   {
@@ -28,9 +32,37 @@ export const appRoutes: Routes = [
     ]
   },
   {
+    path: '',
+    component: UserComponent,
+    children: [
+      {
+        path: '',
+        component: SignInComponent
+      }
+    ]
+  },
+  {
     path: 'userprofile',
-    component: UserProfileComponent,
-    canActivate: [AuthGuard]
+    component: LandingPageComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        component: DashboardComponent
+      },
+      {
+        path: 'addadmin',
+        component: AddAdminComponent
+      },
+      {
+        path: 'addcustomer',
+        component: AddCustomerComponent
+      },
+      {
+        path: 'editprofile',
+        component: UserProfileComponent
+      }
+    ]
   },
   {
     path: '',
