@@ -17,5 +17,5 @@ const customer = new mongoose.Schema({
     checkedBy: { type: String },
     approvedBy: { type: String }
 });
+
 mongoose.model('Customer', customer);
-// module.exports = { Customer };
