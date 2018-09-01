@@ -1,38 +1,45 @@
 <form #customerForm="ngForm" (ngSubmit)="customerForm.valid && onSubmit(customerForm)" autocomplete="off">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-3">
         <div><label>Last name</label></div>
-        <input class="form-control" type="text" #lastName [(ngModel)]="customer.lastName" name="lastName" required />
+        <input class="form-control" type="text" #lastName="ngModel" [(ngModel)]="customer.lastName" name="lastName" required />
       </div>
 
       <div class="col-3">
         <div><label>First name</label></div>
-        <input type="text" #firstName [(ngModel)]="customer.firstName" name="firstName" required />
+        <input class="form-control" type="text" #firstName="ngModel" [(ngModel)]="customer.firstName" name="firstName" required />
       </div>
 
       <div class="col-3">
         <div><label>Middle name</label></div>
-        <input type="text" #middleName [(ngModel)]="customer.middleName" name="middleName" required />
+        <input class="form-control" type="text" #middleName="ngModel" [(ngModel)]="customer.middleName" name="middleName" required
+        />
       </div>
 
       <div class="col-3">
         <label>Date of Birth</label>
-        <input type="date" #dob [(ngModel)]="customer.dob" name="dob" required />
+        <input class="form-control" type="date" #dob="ngModel" [(ngModel)]="customer.dob" name="dob" required />
       </div>
     </div>
     <!--row 1 ends-->
     <!-- Row 2-->
     <div class="row">
       <div class="col-6">
-        <div><label>Gender</label></div>
-        <input type="radio" #gender [(ngModel)]="customer.gender" name="gender" value="Male" />
-        <input type="radio" #gender [(ngModel)]="customer.gender" name="gender" value="Female" />
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" id="genderMale" name="customer.gender" #genderMale="ngModel" [(ngModel)]="customer.gender">Male
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" id="genderFemale" name="customer.gender" #genderFemale="ngModel" [(ngModel)]="customer.gender">Female
+          </label>
+        </div>
       </div>
-
       <div class="col-6">
         <div><label>Address</label></div>
-        <input type="textarea" #address [(ngModel)]="customer.address" name="address" />
+        <input class="form-control" type="textarea" rows="3" #address="ngModel" [(ngModel)]="customer.address" name="address" />
       </div>
     </div>
     <!--Row 2 ends-->
@@ -40,22 +47,23 @@
     <div class="row">
       <div class="col-3">
         <div><label>Mobile number</label></div>
-        <input type="number" #mobileNumber [(ngModel)]="customer.mobileNumber" name="mobileNumber" max="9999999999" required />
+        <input class="form-control" type="number" #mobileNumber="ngModel" [(ngModel)]="customer.mobileNumber" name="mobileNumber"
+          max="9999999999" required />
       </div>
 
       <div class="col-3">
         <div><label>Email ID</label></div>
-        <input type="text" #emailId [(ngModel)]="customer.emailId" name="emailId" required />
+        <input class="form-control" type="text" #emailId="ngModel" [(ngModel)]="customer.emailId" name="emailId" required />
       </div>
 
       <div class="col-3">
         <div><label>Education</label></div>
-        <input type="text" #education [(ngModel)]="customer.education" name="education" />
+        <input class="form-control" type="text" #education="ngModel" [(ngModel)]="customer.education" name="education" />
       </div>
 
       <div class="col-3">
         <label>Occupation</label>
-        <input type="text" #occupation [(ngModel)]="customer.occupation" name="occupation" />
+        <input class="form-control" type="text" #occupation="ngModel" [(ngModel)]="customer.occupation" name="occupation" />
       </div>
     </div>
 
@@ -63,12 +71,13 @@
     <div class="row">
       <div class="col-3">
         <label>Date of Membership</label>
-        <input type="date" #dateOfMembership [(ngModel)]="customer.dateOfMembership" name="dateOfMembership" />
+        <input class="form-control" type="date" #dateOfMembership="ngModel" [(ngModel)]="customer.dateOfMembership" name="dateOfMembership"
+        />
       </div>
     </div>
     <div class="row">
       <div class="col-12">
-        <input type="submit" class="btn btn-success" name="addCustomer" value="Add Customer" />
+        <input type="submit" class="btn btn-success btn-block" name="addCustomer" value="Add Customer" />
       </div>
     </div>
   </div>

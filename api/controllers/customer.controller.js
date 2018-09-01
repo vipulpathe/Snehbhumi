@@ -28,3 +28,13 @@ module.exports.addNewCustomer = (req, res, next) => {
         }
     });
 };
+
+module.exports.getAllData = (req, res, next) => {
+    Customer.find((err, docs) => {
+        if (!err) {
+            res.send(docs);
+        } else {
+            console.log('Error in grtting data for customers ' + JSON.stringify(err, undefined, 2));
+        }
+    });
+};

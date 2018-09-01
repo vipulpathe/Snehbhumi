@@ -17,4 +17,8 @@ export class CustomerService {
   postCustomer(customer: CustomerModel) {
     return this._httpClient.post(environment.apiBaseUrl + '/addcustomer', customer);
   }
+
+  getCustomerList(): any {
+    return this._httpClient.get(environment.apiBaseUrl + '/landingpage');
+  }
 }
