@@ -24,6 +24,7 @@ import { AddCustomerComponent } from './landing-page/add-customer/add-customer.c
 import { AddAdminComponent } from './landing-page/add-admin/add-admin.component';
 import { DashboardComponent } from './landing-page/dashboard/dashboard.component';
 import { UserProfileComponent } from './landing-page/user-profile/user-profile.component';
+import { UpdateCustomerInfoComponent } from './landing-page/dashboard/update-customer-info/update-customer-info.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { UserProfileComponent } from './landing-page/user-profile/user-profile.c
     TopNavComponent,
     AddCustomerComponent,
     AddAdminComponent,
-    DashboardComponent
+    DashboardComponent,
+    UpdateCustomerInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +50,8 @@ import { UserProfileComponent } from './landing-page/user-profile/user-profile.c
     RouterModule.forRoot(appRoutes),
     AgGridModule.withComponents([])
   ],
+  entryComponents: [UpdateCustomerInfoComponent],
+  exports: [DashboardComponent],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, AuthGuard, UserService],
   bootstrap: [AppComponent]
 })

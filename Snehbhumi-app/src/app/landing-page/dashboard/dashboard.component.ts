@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../../shared/customer.service';
 import { CustomerModel } from '../../shared/customer.model';
 import { DatePipe } from '@angular/common';
+import { GridApi } from 'ag-grid';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +11,11 @@ import { DatePipe } from '@angular/common';
 })
 export class DashboardComponent implements OnInit {
   public rowData: any;
+  public customerData: any;
+  public gridOptions: any;
   private _customerService: CustomerService;
+  private _gridApi: any;
+  private _gridColumnApi: any;
 
   columnDefs = [
     { headerName: 'First Name', field: 'firstName', width: 100 },
@@ -35,7 +40,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.refreshCutomerList();
+    // this.refreshCutomerList();
   }
 
   private refreshCutomerList(): any {
@@ -43,4 +48,16 @@ export class DashboardComponent implements OnInit {
       this.rowData = res as CustomerModel[];
     });
   }
+
+  public onSelectionChanged() {
+    this.customerData = this._gridApi.getSelectedRows();
+    console.log('Sample' + this.customerData);
+  }
+
+  public onGridReady(params) {
+    this._gridApi = params.api;
+    this._gridColumnApi = params.columnApi;
+    this.refreshCutomerList();
+  }
+
 }
