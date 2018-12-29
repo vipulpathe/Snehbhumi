@@ -12,7 +12,7 @@ export class UpdateCustomerInfoComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.showData();
+    this.showData();
   }
 
   private showData(): void {
